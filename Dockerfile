@@ -15,8 +15,9 @@ FROM mcr.microsoft.com/devcontainers/python:1-3.11-bullseye
 WORKDIR /code
 
 COPY --from=requirements-stage /tmp/requirements.txt /code/requirements.txt
-
+RUN pip install poetry
 RUN apt-get install -y git
+
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY ./app /code/app
