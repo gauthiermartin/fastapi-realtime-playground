@@ -4,11 +4,14 @@ version = "0.1.0"
 description = "A simple toy project to experience with FastAPI app in realtime"
 authors = ["Martin Gauthier <gauthiermartin86@gmail.com>"]
 readme = "README.md"
-packages = [{include = "fastapi_realtime_playground"}]
+packages = [{include = "app"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.101.0"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+boto3 = "^1.28.21"
+websocket = "^0.2.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
